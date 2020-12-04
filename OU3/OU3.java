@@ -20,7 +20,6 @@ public class OU3 {
         c = new double[n];
         b = new double[m][n];
         
-
         System.out.println("Längd till alla från Z1 till Z2");
         for (int i = 0; i < m; i++) {
             System.out.print("a" + (i + 1) + ": ");
