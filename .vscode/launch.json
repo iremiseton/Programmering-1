@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Test",
+            "request": "launch",
+            "mainClass": "EU4.Test",
+            "projectName": "Programmering-1_1484e38f"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ChessboardTest",
+            "request": "launch",
+            "mainClass": "EU3.ChessboardTest",
+            "projectName": "Programmering-1_1484e38f"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ReachableFieldsOnChessboard",
+            "request": "launch",
+            "mainClass": "EU3.ReachableFieldsOnChessboard",
+            "projectName": "Programmering-1_1484e38f"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ValjPolylinje",
+            "request": "launch",
+            "mainClass": "OU5.ValjPolylinje",
+            "projectName": "Programmering-1_1484e38f"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - PolylinjeTest",
             "request": "launch",
             "mainClass": "OU5.PolylinjeTest",

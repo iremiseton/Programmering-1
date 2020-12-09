@@ -1,36 +1,27 @@
-package OU5;
+package EU4;
 
-public class Polylinje {
+import java.util.Iterator;
+import OU5.Punkt;
+
+public class VPolylinje implements Polylinje {
+    
     private Punkt[] horn;
-    private String farg = "";
-    private int bredd = 1;
+    private String farg;
+    private int bredd;
 
-    public Polylinje() { this.horn = new Punkt[0]; }
-
-    public Polylinje(Punkt[] horn) {
-        this.horn = new Punkt[horn.length];
-        for (int i = 0; i < horn.length; i++) 
-            this.horn[i] = new Punkt(horn[i]);
+    public VPolylinje() {
+        this.horn = null; 
     }
 
-    public String toString() {
-        String res = "{";
-        for (int i = 0; i < horn.length; i++) {
-            res += ( "{" + horn[i].getNamn() + " " + horn[i].getX() + " " + horn[i].getY() + "}");
-        }
-        return res + "}, " + this.getFarg();
+    public VPolylinje(Punkt[] p) {
+            this.horn = p;
     }
 
-    public Punkt[] getHorn() {
-        Punkt[] h = new Punkt[this.horn.length];
-        for (int i = 0; i < this.horn.length; i++)
-            h[i] = this.horn[i];
-        return h; 
-    }
+    public Punkt[] getHorn() {  return this.horn; }
+    
     public String getFarg() { return this.farg; }
+
     public int getBredd() { return this.bredd; }
-    public void setFarg(String farg) { this.farg = farg; }
-    public void setBredd(int bredd) { this.bredd = bredd; }
 
     public double langd() {
         double res = 0;
@@ -39,6 +30,10 @@ public class Polylinje {
         }
         return res;
     }
+
+    public void setFarg(String farg) { this.farg = farg; }
+
+    public void setBredd(int bredd) { this.bredd = bredd; }
 
     public void laggTill(Punkt horn) {
         Punkt[] h = new Punkt[this.horn.length + 1];
@@ -49,11 +44,6 @@ public class Polylinje {
 
         this.horn = h;
     }
-    //  0  1  2  3
-    // [1, 2, 3, 5]
-    // (0, 1)
-
-    // [0, 1, 3, 5,
 
     public void laggTillFramfor(Punkt horn, String hornNamn) {
         Punkt[] h = new Punkt[this.horn.length + 1];
@@ -90,6 +80,17 @@ public class Polylinje {
 			}
         }
         this.horn = h;
+    }
+
+    public String toString() {
+        String res = "{";
+        for (int i = 0; i < horn.length; i++) {
+            res += ( "{" + horn[i].getNamn() + " " + horn[i].getX() + " " + horn[i].getY() + "}");
+        }
+        return res + "}";
+    }
+    
+	public Iterator<Punkt> iterator() {
+		return this.iterator();
 	}
 }
- 
