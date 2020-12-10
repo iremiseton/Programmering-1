@@ -77,7 +77,7 @@ public class NPolylinje implements Polylinje {
         for (int i = 0; i < horn.length; i++) {
             res += ( "{" + horn[i].getNamn() + " " + horn[i].getX() + " " + horn[i].getY() + "}");
         }
-        return res + "}";
+        return res + "}, " + this.farg;
     }
 
     public String getFarg() { return this.farg; }
