@@ -9,12 +9,11 @@ public class Test {
 
         Polylinje polylinje = null;
         Polylinje[] polylinjer = new Polylinje[5];
-        String[] farger = {"röd", "gul"};
-        String farg;
+        String[] farger = {"röd", "gul", "blå"};
 
         for (int i = 0; i < 5; i ++) {
             polylinje = new NPolylinje();
-            polylinje.setFarg(farger[new Random().nextInt(2)]);
+            polylinje.setFarg(farger[new Random().nextInt(3)]);
     
             polylinje.laggTill(new Punkt("C", new Random().nextInt(10) + 1, 3));
             polylinje.laggTill(new Punkt("D", new Random().nextInt(10) + 1, 3));
