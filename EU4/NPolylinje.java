@@ -95,6 +95,13 @@ public class NPolylinje implements Polylinje {
     public void setFarg(String farg) { this.farg = farg; }
     public void setBredd(int bredd) { this.bredd = bredd; }
     public void laggTill(Punkt horn) {
+
+        if (this.horn == null) {
+            Nod nod = new Nod(horn);
+            this.horn = nod;
+            return;
+        }
+
         Nod nod = this.horn;
 
         //Kopierar över 

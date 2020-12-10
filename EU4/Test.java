@@ -5,23 +5,36 @@ import OU5.Punkt;
 public class Test {
     public static void main(String[] args) {
 
-        Punkt[] horn = {new Punkt("A", 10, 10)};
+        Polylinje polylinje = null;
+        Polylinje[] polylinjer = new Polylinje[2];
 
-        NPolylinje polylinje = new NPolylinje(horn);
-
-        System.out.println(polylinje);
-
-        polylinje.laggTillFramfor(new Punkt("B", 5, 5), "A");
-
-        polylinje.laggTill(new Punkt("C", 2, 3));
+        for (int i = 0; i < 2; i ++) {
+            polylinje = new NPolylinje();
+            //polylinje = new VPolylinje();
     
-        /**
-         *  node = polylinke.getNode();
-         *  
-         *  node.nastaNode.nastaNode.horn; => {C, 2, 3}
-         * 
-         */
+            polylinje.laggTill(new Punkt("C", i + 1, 3));
+            polylinje.laggTill(new Punkt("D", i + 1, 3));
+            polylinje.laggTill(new Punkt("E", i + 2, 1));
 
-        // NOD({b, 5, 5}, NOD({A, 10, 10}, NOD({C, 2, 3,}, NULL})))
+            System.out.println(polylinje);
+
+            polylinjer[i] = polylinje;
+        }
+
+
+        System.out.println(yellow(polylinjer));
+    }
+
+    public static Polylinje yellow(Polylinje[] polylinjer) {
+        Polylinje kortaste = null;
+        double k = Double.MAX_VALUE;
+
+        for (int i = 0; i < polylinjer.length; i++) {
+            if (polylinjer[i].langd() < k) {
+                kortaste = polylinjer[i];
+            }
+        }
+
+        return kortaste;
     }
 }
